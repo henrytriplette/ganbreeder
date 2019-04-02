@@ -23,8 +23,8 @@ async function main() {
     const cache = {}
 
     const [ q1, q2, count ] = await Promise.all([
-        knex.raw('select key from image where parent1 is null and size=256'),
-        knex.raw('select key from image where stars>0 and size=256'),
+        knex.raw('select key from image where parent1 is null and size=512'),
+        knex.raw('select key from image where stars>0 and size=512'),
         knex.raw('select count(*) from image where state=1')
     ])
     cache['raw'] = q1.rows.map(({ key }) => key)

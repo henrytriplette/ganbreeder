@@ -1,10 +1,6 @@
-include partials/mailchimp.pug
-include partials/google_analytics.pug
-
 doctype html
 html
     head
-        +google-analytics-mixin()
         title Ganbreeder
         meta(charset="utf-8")
         meta(content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport")
@@ -32,7 +28,7 @@ html
                 width: 100%;
             }
             img {
-                max-width: 256px;
+                max-width: 512px;
             }
     body
         header
@@ -49,7 +45,6 @@ html
                     img(src=root+image.key+'.jpeg')
 
         .text_container
-            +mailchimp-mixin()
 
         #footer
         script.

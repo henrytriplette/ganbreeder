@@ -3,12 +3,12 @@ const save_results = require('./save_results.js')
 const secrets = require('./secrets.js')
 
 async function main() {
-    const size = 256
+    const size = 512
     const [ imgs, vectors, labels ] = await request({
         url: secrets.ganurl256+'/random',
         method: 'POST',
         json: true,
-        form: { num: '24' }
+        form: { num: '2' }
     })
     await save_results({ imgs, vectors, labels, size })
     console.log('all done')

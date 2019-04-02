@@ -1,9 +1,6 @@
-include partials/google_analytics.pug
-include partials/mailchimp.pug
 doctype html
 html
     head
-        +google-analytics-mixin()
         title Ganbreeder
         meta(charset="utf-8")
         meta(content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport")
@@ -50,8 +47,6 @@ html
             a(href='https://www.joelsimon.net') joelsimon.net
             br
             a(href='https://twitter.com/_joelsimon') @joelsimon
-            +mailchimp-mixin()
-
 
 
         #footer

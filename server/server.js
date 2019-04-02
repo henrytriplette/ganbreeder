@@ -56,6 +56,11 @@ app.get('/', async (req, res) => {
         const keys_2 = random_slice(memcache['starred'], 6)
         const keys = keys_1.concat(keys_2)
         const count = memcache['count']
+
+				console.log('keys_1', keys_1);
+				console.log('keys_2', keys_2);
+				console.log('count', count);
+
         res.render('random.pug', { keys, count })
     } catch(err) {
         console.log('Error: /', { err })
