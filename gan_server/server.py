@@ -101,9 +101,15 @@ def create_variations(num, vector, label):
 		if random.random() < 0.3:
 			new_labels[i][random.randint(0, label.shape[0]-1)] += random.random() * 0.5
 
+		# Fuckup
+		if random.random() < 0.1:
+			opts = np.nonzero(new_labels[i])[0]
+			if len(opts) == 1:
+				continue
+			new_labels[i][random.choice(opts)] *= 0.2 + random.random() * 0.6 * -1
+
 		# Remove if less than two percent.
-		# EDIT: let's try adding some weirdness with negative results?
-		# new_labels[new_labels < .02] = 0
+		new_labels[new_labels < .02] = 0
 
 		# Normalize.
 		new_labels[i] /= new_labels[i].sum()
