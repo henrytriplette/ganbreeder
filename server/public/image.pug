@@ -54,8 +54,6 @@ html
                         img
                     .awrap
                         a(href='/starred') Starred
-                    .awrap
-                        a(href='http://www.ganvas.studio/?k='+key, target="_blank") Print
 
                 img.image(src=root+key+'.jpeg')
 
@@ -64,7 +62,7 @@ html
                 p Loading Children
 
             .image_container.content(style='display:hidden')
-                - for (i = 0; i < 12; i ++) {
+                - for (i = 0; i < 4; i ++) {
                     a.imglink()
                         img()
                 - }
